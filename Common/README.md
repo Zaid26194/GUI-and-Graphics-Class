@@ -1,2 +1,2 @@
 # Common Folder 
-Stores files used by all projects in the Common directory.  For instance, webgl-utils.js is used by all WebGL applications.
+Stores files intended to be used in multiple projects.  For instance, webgl-utils.js is used by all WebGL applications.
