@@ -1,10 +1,12 @@
 const DefaultNumSides = 16;
+const DefaultSizeReduction = 1.0;
 
-function Cone( gl, numSides, vertexShaderId, fragmentShaderId ) {
+function Cone( gl, numSides, sizeReduction, vertexShaderId, fragmentShaderId) {
 
     // Initialize the shader pipeline for this object using either shader ids
     //   declared in the application's HTML header, or use the default names.
     //
+    
     var vertShdr = vertexShaderId || "Cone-vertex-shader";
     var fragShdr = fragmentShaderId || "Cone-fragment-shader";
 
@@ -18,6 +20,7 @@ function Cone( gl, numSides, vertexShaderId, fragmentShaderId ) {
     }
 
     var n = numSides || DefaultNumSides; // Number of sides 
+    var size = sizeReduction || DefaultSizeReduction
 
     var theta = 0.0;
     var dTheta = 2.0 * Math.PI / n;
@@ -36,7 +39,7 @@ function Cone( gl, numSides, vertexShaderId, fragmentShaderId ) {
     
     for ( var i = 0; i < n; ++i ) {
         theta = i * dTheta;
-        positions.push( Math.cos(theta), Math.sin(theta), 0.0 );
+        positions.push( Math.cos(theta)/size, Math.sin(theta)/size, 0.0 );
 
         indices.push(n - i);
     }
