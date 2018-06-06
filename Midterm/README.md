@@ -1,4 +1,4 @@
-#The Wheel - Midterm
+# The Wheel - Midterm
 
 For this midterm we were asked to create a wheel looking shape using gl.POINTS, gl.LINES etc. 
 and have it rotating in front of a background.
